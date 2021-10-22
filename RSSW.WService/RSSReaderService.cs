@@ -20,7 +20,7 @@ namespace RSSW.WService
         private string LogFilePath;
         private int Interval;
 
-        public RSSReaderService(int interval = 5000, string logfilepath = @"logs/log.txt") {
+        public RSSReaderService(int interval = 10000, string logfilepath = @"logs/log.txt") {
             Interval = interval;
             LogFilePath = logfilepath;
         }

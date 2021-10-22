@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RSSW.Domain\RSSW.Domain.csproj" />
+    <ProjectReference Include="..\RSSW.Data\RSSW.Data.csproj" />
   </ItemGroup>
 
 </Project>

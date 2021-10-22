@@ -7,7 +7,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
-using RSSW.Domain.Models;
 
 using RSSW.Data;
 
@@ -23,7 +22,8 @@ namespace RSSW.WService
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args).ConfigureServices((hostContext, services) => {
                     services.AddHostedService<RSSReaderService>();
-                    services.AddDbContext<Article>(options => options.UseNpgsql(Configuration.GetConnectionString("")));
+                    services.AddDbContext<RSSWDbContext>(options =>
+                            options.UseNpgsql(hostContext.Configuration.GetConnectionString("Default")));
                 });
     }
 }

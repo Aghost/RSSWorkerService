@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Net.Http;
 using CodeHollow.FeedReader;
 using RSSW.Domain.Models;
+using RSSW.Business.Services;
+using RSSW.Data;
 
 using static System.Console;
 
@@ -13,11 +15,9 @@ namespace RSSW.Business
     //https://yetanotherchris.dev/csharp/simplified-csharp-atom-and-rss-feed-parser/
     public class RSSFeedReader
     {
-        //private readonly IRSSReaderService _ReaderService;
+        private readonly ArticleService _ArticleService = new();
 
-        public RSSFeedReader() {
-            //_ReaderService = readerService;
-        }
+        public RSSFeedReader(ArticleService _as) { }
 
         public async void ReadFeed() {
             List<Uri> rssFeeds = new List<Uri> {
