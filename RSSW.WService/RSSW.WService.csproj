@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>dotnet-RSSW.WService-B51A19D0-9407-4301-A793-E5B68340D20B</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CodeHollow.FeedReader" Version="1.2.2" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RSSW.Business\RSSW.Business.csproj" />
+    <ProjectReference Include="..\RSSW.Data\RSSW.Data.csproj" />
+    <ProjectReference Include="..\RSSW.Domain\RSSW.Domain.csproj" />
+  </ItemGroup>
+</Project>
